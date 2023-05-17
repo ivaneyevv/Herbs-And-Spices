@@ -1,0 +1,64 @@
+.about{
+    display: flex;
+}
+
+.about-text {
+    margin-top: 60px;
+    max-width: 500px;
+    font-family: 'Inter';
+    z-index: 7;
+}
+
+.red-element1 {
+    width: 140px;
+    height: 20px;
+    background: #D02222;
+    margin-top: -100px;
+}
+
+.red-element2 {
+    width: 200px;
+    height: 30px;
+    background: #D02222;
+    margin-top: -168px;
+    margin-left: 120px;
+}
+
+.red-element3 {
+    width: 200px;
+    height: 25px;
+    background: #D02222;
+    margin-top: 173px;
+    margin-left: 200px;
+}
+
+.twoother {
+    display: flex;
+    flex-direction: column;
+}
+
+.spice-img {
+    width: 250px;
+    height: 250px;
+    margin-top: 230px;
+    margin-left: 100px;
+}
+
+.images {
+    display: flex;
+}
+
+.spice2-img {
+    width: 400px;
+    height: 150px;
+    margin-top: 230px;
+    margin-left: 20px;
+}
+
+.spice3-img {
+    width: 400px;
+    height: 280px;
+    margin-top: 400px;
+    margin-left: 20px;
+    position: absolute;
+}

@@ -1,0 +1,60 @@
+.login__form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-family: 'Inter';
+    margin-top: 20px;
+    font-size: 16px;
+    color: #D02222;
+}
+
+.form-input {
+    margin-top: 20px;
+    width: 350px;
+    height: 50px;
+    font-size: 16px;
+    color: #000;
+    text-transform: capitalize;
+    border: 1px solid #dedede;
+}
+
+.form__submit{
+    padding: 14px 146px 14px 146px;
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-top: 40px;
+    border: none;
+    background: #D02222;
+    color: #fff;
+}
+
+.form__submit:hover{
+    padding: 13px 145px 13px 145px;
+    background: #fff;
+    border: 1px solid #D02222;
+    color: #D02222;
+    transition: 0.2s ease-in;
+}
+
+.tip-signup{
+    margin-top: 20px;
+    display: flex;
+    margin-left: 68px;
+
+    .tip__text-signup{
+        text-transform: none;
+        font-family: 'Inter';
+        font-size: 14px;
+        .tip-signup-link {
+            font-family: 'Inter';
+            font-size: 14px;
+            color: #25D022;
+            text-decoration: underline;
+            margin-left: 10px;
+            text-transform: capitalize;
+        }
+    }
+}
