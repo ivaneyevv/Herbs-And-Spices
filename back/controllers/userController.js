@@ -5,11 +5,20 @@ import bcrypt from 'bcrypt';
 import UserModel from '../models/user.js'
 
 export const signUp = async (req, res) => {
+    const result = await UserModel.findOne({ email: req.body.email });
+
+    if (result) {
+        return res.send({
+            message: 'This email is exist!', alert: false
+        });
+    }
+
     try {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json(errors.array());
         }
+
 
         const password = req.body.password;
         const salt = await bcrypt.genSalt(10);
@@ -20,6 +29,8 @@ export const signUp = async (req, res) => {
             nickName: req.body.nickName,
             passwordHash: hash,
         });
+
+
 
         const user = await doc.save();
 
@@ -33,9 +44,9 @@ export const signUp = async (req, res) => {
 
         const { passwordHash, ...userData} = user._doc;
 
-        res.json({
-            ...userData,
-            token,
+        res.send({
+            message: "successfuly signed up!",
+            alert: true,
         });
     } catch (error) {
         console.log(error);
@@ -50,17 +61,17 @@ export const logIn = async (req, res) => {
         const user = await UserModel.findOne({ email: req.body.email });
 
         if (!user) {
-            return res.status(400).json({
-                message: 'User not found!'
+            return res.send({
+                message: 'User not found!', alert: false, data : userData
             });
         }
 
         const isValidPassword = await bcrypt.compare(req.body.password, user._doc.passwordHash);
 
         if (!isValidPassword){
-            return res.status(404).json(
+            return res.send(
                 {
-                    message: 'Wrong password!'
+                    message: 'Wrong password!', alert: false, data : userData 
                 }
             )
         }
@@ -74,10 +85,11 @@ export const logIn = async (req, res) => {
         )
 
         const { passwordHash, ...userData} = user._doc;
-
-        res.json({
-            ...userData,
-            token,
+        
+        res.send({
+            message: "successfuly loged in!",
+            alert: true,
+            data: userData
         });
     } catch (error) {
         console.log(error);

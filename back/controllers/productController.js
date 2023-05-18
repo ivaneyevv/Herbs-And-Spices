@@ -5,15 +5,16 @@ export const create = async (req, res) => {
         const productItem = new ProductModel({
             title: req.body.title,
             cost: req.body.cost,
-            weight: req.body.weight,
-            tag: req.body.tag,
-            amount: req.body.amount,
-            imageUrl: req.body.imageUrl,
+            category: req.body.category,
+            description: req.body.description,
+            image: req.body.image,
         })
 
         const product = await productItem.save();
-
-        res.json(product);
+        console.log(req.body)
+        res.send({
+            message: "successfuly created!"
+        });
     } catch (error) {
         console.log(error);
         res.status(500).json({

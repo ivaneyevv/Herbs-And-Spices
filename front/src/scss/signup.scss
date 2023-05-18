@@ -4,6 +4,10 @@
     flex-direction: column;
 }
 
+.auth__button-logout {
+    margin-right: 20px;
+}
+
 .form-label {
     font-family: 'Inter';
     margin-top: 20px;
@@ -15,16 +19,16 @@
     margin-top: 20px;
     width: 350px;
     height: 50px;
+    text-transform: none;
     font-size: 16px;
     color: #000;
-    text-transform: capitalize;
     border: 1px solid #dedede;
 }
 
 .form__submit{
+    width: 350px;
     padding: 14px 146px 14px 146px;
     font-size: 18px;
-    text-transform: capitalize;
     margin-top: 40px;
     border: none;
     background: #D02222;

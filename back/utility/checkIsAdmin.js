@@ -16,7 +16,7 @@ export default (req, res, next) => {
         }
     } else {
         return res.status(403).json({
-            message: 'No Access',
+            message: 'No Admin',
         })
     }
     console.log(token);
